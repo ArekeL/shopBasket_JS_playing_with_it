@@ -16,6 +16,10 @@ class Basket {
             .forEach(line => console.log(line))
     }
 
+    remove(no) {
+        this.items.splice(no -1, 1)
+    }
+
 
 }
 
@@ -40,10 +44,17 @@ const tomato = new Product("Pomidor", 14.20)
 console.log(oranges, tomato)
 
 shopBasket.add(tomato)
+shopBasket.add(oranges)
 shopBasket.add(tomato)
 shopBasket.add(tomato)
 shopBasket.add(oranges)
 
+shopBasket.showBasket()
+console.log(shopBasket.getTotalValue().toFixed(2))
+
+
+shopBasket.remove(2)
+console.log(`Remove`)
 shopBasket.showBasket()
 console.log(shopBasket.getTotalValue().toFixed(2))
 
