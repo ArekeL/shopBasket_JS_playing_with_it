@@ -2,6 +2,14 @@ class Basket {
     constructor() {
         this.items = []
     }
+
+    clear() {
+        this.items.length = 0
+        // this.items.splice()
+        // this.items = []
+
+    }
+
     add(item) {
         this.items.push(item);
     };
@@ -36,9 +44,9 @@ class Product {
 
 const  shopBasket = new Basket();
 
-const oranges = new Product("Pomarańcze LUZ", 7.80)
+const oranges = new Product("Oranges", 7.80)
 
-const tomato = new Product("Pomidor", 14.20)
+const tomato = new Product("Tomato", 14.20)
 
 
 

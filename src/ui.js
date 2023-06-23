@@ -4,8 +4,6 @@ const btnBuyAll = document.querySelector(".buy")
 
 const basket = new Basket();
 
-btnBuyAll.removeAttribute("disabled")
-
 const crateBasketUi = () => {
         basketUl.innerText = ""
 
@@ -16,7 +14,11 @@ const crateBasketUi = () => {
         }
         const basketTotalValue = basket.getTotalValue()
         btnBuyAll.innerText =`Buy $${basketTotalValue.toFixed(2)}`
+
+        btnBuyAll.disabled = basketTotalValue === 0
 };
+
+
 
 
 const addProductTuBasket = event => {
@@ -29,6 +31,21 @@ const addProductTuBasket = event => {
 
 };
 
+function buyAllProducts() {
+        const basketTotalValue = basket.getTotalValue()
+        alert(`The value of the products is ${basketTotalValue.toFixed(2)}`)
+        basket.clear()
+        crateBasketUi()
+}
+
 for (const btn of btnBuys) {
     btn.addEventListener("click", addProductTuBasket)
 }
+
+const clean = () => {
+
+};
+
+btnBuyAll.addEventListener('click', buyAllProducts)
+
+
