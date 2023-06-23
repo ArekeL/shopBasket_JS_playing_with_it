@@ -12,7 +12,7 @@ class Basket {
 
     getBasketSummary() {
         return this.items
-            .map((product, i) => `${i + 1} - ${product.name} - ${product.price.toFixed(2)} PLN` )
+            .map((product, i) => `${i + 1} - ${product.name} - $${product.price.toFixed(2)}` )
     }
 
     remove(no) {
