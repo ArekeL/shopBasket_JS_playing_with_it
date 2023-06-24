@@ -4,12 +4,22 @@ const btnBuyAll = document.querySelector(".buy")
 
 const basket = new Basket();
 
+const removeItem = event => {
+        const id = Number(event.target.dataset.id);
+        basket.remove(id);
+        crateBasketUi();
+};
+
 const crateBasketUi = () => {
         basketUl.innerText = ""
 
-        for (const oneProductInfo of basket.getBasketSummary()) {
+        for (const {id, text} of basket.getBasketSummary()) {
+        // const {id, text} = oneProductInfo - destructuring in statement for...of
+
         const newLi = document.createElement("li")
-        newLi.innerText =  oneProductInfo;
+        newLi.innerText =  text;
+        newLi.addEventListener('click', removeItem)
+        newLi.dataset.id = id
         basketUl.appendChild(newLi)
         }
         const basketTotalValue = basket.getTotalValue()
