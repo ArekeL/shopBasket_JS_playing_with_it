@@ -6,6 +6,8 @@ const productsUl = document.querySelector(".product-list")
 const addProductToShop = event => {
         event.preventDefault();
 
+
+
         const name = nameInput.value;
         const price = Number(priceInput.value);
 
@@ -24,6 +26,7 @@ const addProductToShop = event => {
         newBtn.innerText = "Add";
         newBtn.addEventListener("click", addProductTuBasket)
 
+
         newLi.appendChild(newStrong);
         newLi.appendChild(newPrice);
         newLi.appendChild(newBtn);
@@ -31,7 +34,8 @@ const addProductToShop = event => {
         productsUl.appendChild(newLi);
 
 
-
-
 };
+
+
 addProductForm.addEventListener("submit", addProductToShop)
+

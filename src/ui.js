@@ -57,5 +57,6 @@ const clean = () => {
 };
 
 btnBuyAll.addEventListener('click', buyAllProducts)
+crateBasketUi()
 
 
