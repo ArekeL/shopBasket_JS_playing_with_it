@@ -71,10 +71,6 @@ class Product {
     }
 
 }
-// old code
-// const  shopBasket = new Basket();
-// const oranges = new Product("Oranges", 7.80)
-// const tomato = new Product("Tomato", 14.20)
 
 
 
