@@ -13,11 +13,25 @@ const addProductToShop = event => {
         const newLi = document.createElement("li")
         const newStrong = document.createElement("strong");
         newStrong.innerText = name;
-        const  newPrice =  document.createTextNode(` - $${price.toFixed(2)}`)
-        newLi.appendChild(newStrong)
-        newLi.appendChild(newPrice)
+        const  newPrice =  document.createTextNode(` - $${price.toFixed(2)} `)
 
-        productsUl.appendChild(newLi)
+        const newBtn = document.createElement("button");
+
+
+        newBtn.classList.add("btn", "buy");
+        newBtn.dataset.name = name;
+        newBtn.dataset.price = String(price);
+        newBtn.innerText = "Add";
+        newBtn.addEventListener("click", addProductTuBasket)
+
+        newLi.appendChild(newStrong);
+        newLi.appendChild(newPrice);
+        newLi.appendChild(newBtn);
+
+        productsUl.appendChild(newLi);
+
+
+
 
 };
 addProductForm.addEventListener("submit", addProductToShop)
